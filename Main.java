@@ -54,6 +54,52 @@ public class Main {
         cupcakeMenu.add(cupcake);
         cupcakeMenu.add(redVelvet);
         cupcakeMenu.add(chocolate);
+
+        ArrayList<Drink> drinkMenu = new ArrayList<Drink>();
+
+        Drink water = new Drink();
+        Soda soda = new Soda();
+        Milk milk = new Milk();
+
+        System.out.println("We are in the middle of creating the drink menu."
+            + "\nWe currently have three drinks on the menu, btu we need to decide on pricing.");
+
+        System.out.println("We are deciding on the price for our bottled water." 
+            +"\nHere is the description: ");
+        water.type();
+
+        System.out.println("How much would you like to charge for the water bottle?"
+            + "\n(Input a numerical number taken to 2 decimal places)");
+
+        priceText = input.nextLine();
+        price = Double.parseDouble(priceText);
+        water.setPrice(price);
+
+        System.out.println("We are deciding on the price for our bottle of soda."
+            + "\nHere is the description: ");
+        soda.type();
+
+        System.out.println("How much would you like to charge for the bottled soda?"
+            + "\n(Input a numerical number taken to 2 decimal places)");
+
+        priceText = input.nextLine();
+        price = Double.parseDouble(priceText);
+        soda.setPrice(price);
+
+        System.out.println("We are deciding on the price for our bottle of milk."
+            + "\nHere is the description: ");
+        milk.type();
+
+        System.out.println("How much would you like to charge for the bottled milk?"
+            + "\n(Input a numberical number taken to 2 decimal places)");
+
+        priceText = input.nextLine();
+        price = Double.parseDouble(priceText);
+        milk.setPrice(price);
+
+        drinkMenu.add(water);
+        drinkMenu.add(soda);
+        drinkMenu.add(milk);
     }
 
 }
@@ -86,5 +132,36 @@ class Chocolate extends Cupcake {
 
     public void type() {
         System.out.println("A chocolate based cupcake, with chocolate frosting.");
+    }
+}
+
+class Drink {
+
+    public double price;
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void type() {
+        System.out.println("A bottle of water.");
+    }
+}
+
+class Soda extends Drink {
+    
+    public void type() {
+        System.out.println("A bottle of soda.");
+    }
+}
+
+class Milk extends Drink {
+
+    public void type() {
+        System.out.println("A bottle of milk.");
     }
 }
