@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -56,7 +58,7 @@ public class Order {
             System.out.println("What would you like to order? "
             + "Please use the number associated with each item to order.");
 
-            int orderChoice = input.nextLine();
+            int orderChoice = input.nextInt();
 
             input.nextLine();
 
